@@ -2,6 +2,8 @@ package com.example.foodapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -25,6 +27,7 @@ public class Cart extends AppCompatActivity {
     private FirebaseFirestore db;
     private RecyclerView recyclerViewCart; // Khai báo biến RecyclerView
     ImageView imgBack;
+    Button btnThanhToan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +42,19 @@ public class Cart extends AppCompatActivity {
         });
 
         imgBack = findViewById(R.id.imageViewBack);
+        btnThanhToan = findViewById(R.id.button);
         recyclerViewCart = findViewById(R.id.recyclerView); // Khởi tạo RecyclerView
         db = FirebaseFirestore.getInstance(); // Khởi tạo Firestore
 
         imgBack.setOnClickListener(v -> finish());
+
+        btnThanhToan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Payment.class);
+                startActivity(intent);
+            }
+        });
 
         // Nhận dữ liệu từ Intent
         Intent intent = getIntent();

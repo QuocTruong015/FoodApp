@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:text="Details"
+        android:text="Chi tiết"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewBack"
@@ -184,7 +184,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="14dp"
         android:background="@drawable/custom_btn"
-        android:text="Add to cart"
+        android:text="Thêm vào giỏ"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgStar" />
 
@@ -194,7 +194,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:background="@drawable/custom_btn"
-        android:text="Order Now"
+        android:text="Đặt hàng"
         app:layout_constraintBottom_toBottomOf="@+id/buttonAddToCart"
         app:layout_constraintStart_toEndOf="@+id/buttonAddToCart"
         app:layout_constraintTop_toTopOf="@+id/buttonAddToCart" />
@@ -205,7 +205,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
-        android:text="Comments"
+        android:text="Bình luận"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnOrder" />

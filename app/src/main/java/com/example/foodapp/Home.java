@@ -2,10 +2,12 @@
 
     import android.content.Intent;
     import android.os.Bundle;
+    import android.view.MenuItem;
     import android.view.View;
     import android.widget.Toast;
 
     import androidx.activity.EdgeToEdge;
+    import androidx.annotation.NonNull;
     import androidx.appcompat.app.AppCompatActivity;
     import androidx.appcompat.view.menu.ShowableListMenu;
     import androidx.core.graphics.Insets;
@@ -14,12 +16,16 @@
     import androidx.recyclerview.widget.LinearLayoutManager;
     import androidx.recyclerview.widget.RecyclerView;
 
+    import com.google.android.material.bottomnavigation.BottomNavigationView;
+    import com.google.android.material.navigation.NavigationBarView;
+
     import java.util.ArrayList;
     import java.util.List;
 
     public class Home extends AppCompatActivity {
 
         RecyclerView recyclerView, recyclerResView;
+        BottomNavigationView bottomNavigationView;
         List<Category_Item> items;
         List<Restaurant_Item> resItems;
 
@@ -32,6 +38,30 @@
                 Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
                 v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
                 return insets;
+            });
+
+            bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+            bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    if (item.getItemId() == R.id.menu_tichdiem){
+                        Intent intent = new Intent(getApplicationContext(), TichDiem.class);
+                        startActivity(intent);
+                    }
+
+                    if (item.getItemId() == R.id.menu_thongbao){
+                        Intent intent = new Intent(getApplicationContext(), Noti.class);
+                        startActivity(intent);
+                    }
+
+                    if (item.getItemId() == R.id.menu_toi){
+                        Intent intent = new Intent(getApplicationContext(), Info.class);
+                        startActivity(intent);
+                    }
+
+                    return true;
+                }
             });
 
             ShowRecycleCategoryView();
